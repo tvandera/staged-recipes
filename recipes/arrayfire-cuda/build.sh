@@ -6,7 +6,6 @@
 
 mkdir build && cd build
 
-# arrayfire-cuda does not build with c++17 
 CXXFLAGS="$(echo $CXXFLAGS |sed -e 's/-std=c++17/-std=c++14/g')"
 DEBUG_CXXFLAGS="$(echo $DEBUG_CXXFLAGS |sed -e 's/-std=c++17/-std=c++14/g')"
 

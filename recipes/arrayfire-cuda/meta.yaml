@@ -1,5 +1,5 @@
 package:
-  name: arrayfire-cuda
+  name: arrayfire-gpu
   version: "3.7.3"
 
 build:      
