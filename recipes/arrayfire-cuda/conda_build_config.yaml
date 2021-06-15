@@ -1,7 +1,0 @@
-cudatoolkit:
-    - 11.0
-    - 10.2
-cudnn:
-    - 7.6
-cxx_compiler_version:
-    - 7.5.0  # [ linux ]
