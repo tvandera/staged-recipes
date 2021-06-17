@@ -12,6 +12,10 @@ cuda_compiler_version:
 - None
 cudnn:
 - undefined
+cxx_compiler:
+- gxx
+cxx_compiler_version:
+- '7'
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
 fftw:

@@ -3,7 +3,7 @@ About arrayfire-cuda
 
 Home: http://arrayfire.org/
 
-Package license: Open Source
+Package license: 
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/staged-recipes-feedstock/blob/master/LICENSE.txt)
 
@@ -155,4 +155,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@tvandera](https://github.com/tvandera/)
 
