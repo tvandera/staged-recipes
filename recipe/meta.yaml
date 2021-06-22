@@ -16,6 +16,8 @@ build:
     - ENABLE_CUDA=OFF # [ cuda_compiler_version == "None" ] 
     - ENABLE_CPU=OFF  # [ cuda_compiler_version != "None" ] 
     - ENABLE_CPU=ON   # [ cuda_compiler_version == "None" ] 
+  ignore_run_exports_from:
+    - cudnn # cudnn is loaded as a plugin
 
 requirements:
   build:
@@ -25,8 +27,8 @@ requirements:
     - make   # [not win]
     - ninja  # [win]
   host:
-    - cudnn {{ cudnn }} # [ cuda_compiler_version != "None" ]
-    - mkl               # [ cuda_compiler_version == "None" ]
+    - cudnn {{ cudnn }}              # [ cuda_compiler_version != "None" ]
+    - mkl-devel                      # [ cuda_compiler_version == "None" ]
     - boost
     - fftw
   run:
