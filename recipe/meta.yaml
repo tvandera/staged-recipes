@@ -2,7 +2,7 @@
 {% set build = 1 %}
 
 package:
-  name: arrayfire-cuda
+  name: arrayfire
   version: {{ version }}
 
 source:
@@ -24,8 +24,6 @@ requirements:
     - {{ compiler("cxx") }}
     - {{ compiler("cuda") }} # [ cuda_compiler_version != "None" ]
     - cmake
-    - make   # [not win]
-    - ninja  # [win]
   host:
     - cudnn {{ cudnn }}              # [ cuda_compiler_version != "None" ]
     - mkl-devel                      # [ cuda_compiler_version == "None" ]
