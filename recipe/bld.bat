@@ -16,7 +16,7 @@ cmake.exe ^
     -DAF_BUILD_UNIFIED=OFF ^
     -DAF_BUILD_EXAMPLES=OFF ^
     -DBUILD_TESTING=OFF ^
-    ${SRC_DIR}
+    %SRC_DIR%
 if errorlevel 1 exit /b 1
 
 cmake.exe --build . --config Release
