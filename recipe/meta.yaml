@@ -27,14 +27,14 @@ requirements:
   host:
     - cudnn {{ cudnn }}              # [ cuda_compiler_version != "None" ]
     - mkl-devel                      # [ cuda_compiler_version == "None" ]
-    - tbb-devel                      # [ cuda_compiler_version == "None" ]
+    - intel-openmp                   # [ cuda_compiler_version == "None" ]
     - boost
     - fftw
   run:
     - {{ pin_compatible('cudatoolkit', max_pin='x.x') }}  # [ cuda_compiler_version != "None" ]
     - {{ pin_compatible('cudnn') }}  # [ cuda_compiler_version != "None" ]
     - {{ pin_compatible('mkl') }}    # [ cuda_compiler_version == "None" ]
-    - {{ pin_compatible('tbb') }}    # [ cuda_compiler_version == "None" ]
+    - {{ pin_compatible('intel-openmp') }}    # [ cuda_compiler_version == "None" ]
     - fftw
 
 about:
