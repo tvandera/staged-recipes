@@ -9,8 +9,8 @@ cmake.exe ^
     %CMAKE_ARGS% ^
     -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
     -DAF_BUILD_CPU=%ENABLE_CPU% ^
-    -DUSE_CPU_MKL=ON ^
-    -DMKL_ThreadingLibrary_LINK_LIBRARY=" " ^
+    -DUSE_CPU_MKL=ON ^    
+    -DMKL_ThreadingLibrary_LINK_LIBRARY:FILEPATH=" " ^
     -DAF_BUILD_CUDA=%ENABLE_CUDA% ^
     -DAF_WITH_CUDNN=ON ^
     -DAF_BUILD_OPENCL=OFF ^
