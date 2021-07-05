@@ -1,0 +1,12 @@
+diff --git CMakeModules/FindMKL.cmake CMakeModules/FindMKL.cmake
+index 718409a1..41dc1f5c 100644
+--- CMakeModules/FindMKL.cmake
++++ CMakeModules/FindMKL.cmake
+@@ -312,6 +312,7 @@ find_mkl_library(NAME RT LIBRARY_NAME mkl_rt)
+ if(MKL_THREAD_LAYER STREQUAL "Intel OpenMP")
+   find_mkl_library(NAME ThreadLayer LIBRARY_NAME mkl_intel_thread SEARCH_STATIC)
+   find_mkl_library(NAME ThreadingLibrary LIBRARY_NAME iomp5)
++  set(MKL_ThreadingLibrary_LINK_LIBRARY "" CACHE FILEPATH "Overwrite" FORCE)
+ elseif(MKL_THREAD_LAYER STREQUAL "GNU OpenMP")
+   find_package(OpenMP REQUIRED)
+   find_mkl_library(NAME ThreadLayer LIBRARY_NAME mkl_gnu_thread SEARCH_STATIC)

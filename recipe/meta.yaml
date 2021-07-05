@@ -8,6 +8,8 @@ package:
 source:
     git_url: https://github.com/arrayfire/arrayfire
     git_rev: v{{ version }}
+    patches:
+      - findiomp5.patch
 
 build:      
   number: {{ build }}
