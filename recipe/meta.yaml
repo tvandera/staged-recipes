@@ -9,7 +9,7 @@ source:
     git_url: https://github.com/arrayfire/arrayfire
     git_rev: v{{ version }}
     patches:
-      - findiomp5.patch
+      - 0001-FIX-fix-compilation-on-windows-when-libiomp5.lib-par.patch
 
 build:      
   number: {{ build }}

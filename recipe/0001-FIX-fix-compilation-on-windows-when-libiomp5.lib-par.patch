@@ -1,0 +1,34 @@
+From 9c483a06ca36c70620ef140e048b78e9f07e6fa0 Mon Sep 17 00:00:00 2001
+From: Tom Vander Aa <Tom.VanderAa@gmail.com>
+Date: Tue, 6 Jul 2021 14:02:39 +0200
+Subject: [PATCH] FIX: fix compilation on windows when libiomp5.lib (part of
+ MKL) is not part of conda's MKL
+
+---
+ CMakeModules/FindMKL.cmake | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeModules/FindMKL.cmake b/CMakeModules/FindMKL.cmake
+index 718409a1..51472277 100644
+--- a/CMakeModules/FindMKL.cmake
++++ b/CMakeModules/FindMKL.cmake
+@@ -381,6 +381,7 @@ find_package_handle_standard_args(MKL_Static
+ if(NOT WIN32)
+   find_library(M_LIB m)
+   mark_as_advanced(M_LIB)
++  set(MKL_THREADING_LIBRARY_TARGET MKL::ThreadingLibrary)
+ endif()
+ 
+ if(MKL_Shared_FOUND AND NOT TARGET MKL::Shared)
+@@ -396,7 +397,7 @@ if(MKL_Shared_FOUND AND NOT TARGET MKL::Shared)
+     set_target_properties(MKL::Shared
+       PROPERTIES
+         IMPORTED_LOCATION "${MKL_Core_LINK_LIBRARY}"
+-        INTERFACE_LINK_LIBRARIES "MKL::Interface;MKL::ThreadLayer;MKL::ThreadingLibrary;${CMAKE_DL_LIBS};${M_LIB}"
++	INTERFACE_LINK_LIBRARIES "MKL::Interface;MKL::ThreadLayer;${MKL_THREADING_LIBRARY_TARGET};${CMAKE_DL_LIBS};${M_LIB}"
+         INTERFACE_INCLUDE_DIRECTORIES "${MKL_INCLUDE_DIR};${MKL_FFTW_INCLUDE_DIR}"
+         IMPORTED_NO_SONAME TRUE)
+   endif()
+-- 
+2.23.0.windows.1
+
