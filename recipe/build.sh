@@ -16,8 +16,6 @@ cmake \
     -DAF_BUILD_CPU=${ENABLE_CPU} \
     -DUSE_CPU_MKL=ON \
     -DAF_BUILD_CUDA=${ENABLE_CUDA} \
-    -DCUDA_cublasLt_static_LIBRARY=/usr/lib64/libcublasLt_static.a \
-    -DCUDA_cublas_static_LIBRARY=/usr/lib64/libcublas_static.a \
     -DAF_WITH_CUDNN=ON \
     -DAF_BUILD_OPENCL=OFF \
     -DAF_BUILD_UNIFIED=OFF \
